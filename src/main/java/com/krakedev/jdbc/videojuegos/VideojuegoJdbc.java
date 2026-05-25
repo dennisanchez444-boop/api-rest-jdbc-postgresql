@@ -1,7 +1,7 @@
 package com.krakedev.jdbc.videojuegos;
 
-import com.krakdev.videojuegos.entidades.Videojuego;
 import com.krakedev.jdbc.Conexion;
+import com.krakedev.videojuegos.entidades.Videojuego;
 
 import java.sql.*;
 import java.util.ArrayList;

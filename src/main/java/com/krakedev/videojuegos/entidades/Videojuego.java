@@ -1,4 +1,4 @@
-package com.krakdev.videojuegos.entidades;
+package com.krakedev.videojuegos.entidades;
 
 public class Videojuego {
 

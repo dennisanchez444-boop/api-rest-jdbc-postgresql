@@ -1,7 +1,7 @@
-package com.krakedev.jdbc.videojuegos.contoller;
+package com.krakedev.jdbc.videojuegos.controller;
 
-import com.krakdev.videojuegos.entidades.Videojuego;
 import com.krakedev.jdbc.videojuegos.services.ServicioVideojuegoJdbc;
+import com.krakedev.videojuegos.entidades.Videojuego;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
