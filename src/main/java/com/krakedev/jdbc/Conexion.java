@@ -23,13 +23,6 @@ public class Conexion {
 
         } catch (Exception e) {
             logger.error("Error inesperado en el sistema", e);
-        }finally {
-        	try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
         }
 
         return con;

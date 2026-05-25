@@ -33,27 +33,44 @@ public class VideojuegoJdbc {
 
 	// LISTAR
 	public List<Videojuego> listar() {
-		List<Videojuego> lista = new ArrayList<>();
-		String sql = "SELECT * FROM videojuegos";
 
-		try (Connection con = Conexion.conectar();
-				PreparedStatement ps = con.prepareStatement(sql);
-				ResultSet rs = ps.executeQuery()) {
-			while (rs.next()) {
-				Videojuego v = new Videojuego();
-				v.setCodigo(rs.getString("codigo"));
-				v.setNombre(rs.getString("nombre"));
-				v.setPlataforma(rs.getString("plataforma"));
-				v.setPrecio(rs.getDouble("precio"));
-				v.setDisponible(rs.getBoolean("disponible"));
-				v.setGenero(rs.getString("genero"));
+	    System.out.println("ENTRO AL LISTAR");
 
-				lista.add(v);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return lista;
+	    List<Videojuego> lista = new ArrayList<>();
+
+	    String sql = "SELECT * FROM videojuegos";
+
+	    try (
+	        Connection con = Conexion.conectar();
+	        PreparedStatement ps = con.prepareStatement(sql);
+	        ResultSet rs = ps.executeQuery()
+	    ) {
+
+	        System.out.println("CONEXION OK");
+
+	        while (rs.next()) {
+
+	            System.out.println("LEYENDO FILA");
+
+	            Videojuego v = new Videojuego();
+
+	            v.setCodigo(rs.getString("codigo"));
+	            v.setNombre(rs.getString("nombre"));
+	            v.setPlataforma(rs.getString("plataforma"));
+	            v.setPrecio(rs.getDouble("precio"));
+	            v.setDisponible(rs.getBoolean("disponible"));
+	            v.setGenero(rs.getString("genero"));
+
+	            lista.add(v);
+	        }
+
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+
+	    System.out.println(lista);
+
+	    return lista;
 	}
 
 	// BUSCAR
